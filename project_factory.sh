@@ -21,8 +21,14 @@ read -p "Update attendance thresholds? (y/n): " choice
 if [ "$choice" = "y" ]; then
   read -p "Warning threshold (default 75): " warning
   warning=${warning:-75}
+  if ! [[ "$warning" =~ ^[0-9]+$ ]]; then
+    warning=75
+  fi
   read -p "Failure threshold (default 50): " failure
   failure=${failure:-50}
+  if ! [[ "$failure" =~ ^[0-9]+$ ]]; then
+    failure=50
+  fi
   sed -i '' "s/\"warning\": 75/\"warning\": $warning/" "$project_dir/Helpers/config.json"
   sed -i '' "s/\"failure\": 50/\"failure\": $failure/" "$project_dir/Helpers/config.json"
 fi
