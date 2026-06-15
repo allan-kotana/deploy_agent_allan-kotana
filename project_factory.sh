@@ -59,8 +59,10 @@ if [ "$choice" = "y" ]; then
       failure=50
       ;;
   esac
-  sed -i '' "s/\"warning\": 75/\"warning\": $warning/" "$project_dir/Helpers/config.json"
-  sed -i '' "s/\"failure\": 50/\"failure\": $failure/" "$project_dir/Helpers/config.json"
+  sed "s/\"warning\": 75/\"warning\": $warning/" "$project_dir/Helpers/config.json" > "$project_dir/Helpers/config.tmp"
+  mv "$project_dir/Helpers/config.tmp" "$project_dir/Helpers/config.json"
+  sed "s/\"failure\": 50/\"failure\": $failure/" "$project_dir/Helpers/config.json" > "$project_dir/Helpers/config.tmp"
+  mv "$project_dir/Helpers/config.tmp" "$project_dir/Helpers/config.json"
 fi
 
 if python3 --version; then
