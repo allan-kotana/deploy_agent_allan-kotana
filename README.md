@@ -29,3 +29,6 @@ attendance_tracker_v1/
 If you stop the script before its done you can press Ctrl+C.
 
 When you do that it makes a file called attendance_tracker_{name}_archive and deletes the folder that was being made. so if something goes wrong your folder doesnt just stay there half finished.
+
+## Video walkthrough
+https://youtu.be/bWDmf-mayAQ
