@@ -6,6 +6,7 @@ This is my project factory script for the attendance tracker assignment.
 
 ### Open terminal in this folder and type:
 
+chmod +x project_factory.sh
 ./project_factory.sh
 
 ### It will ask you a few things:
